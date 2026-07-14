@@ -5,6 +5,7 @@ import { Menu, Phone, Truck, X } from "lucide-react";
 
 const links = [
   ["Dodávky", "#dodavky"],
+  ["Cenník", "#cennik"],
   ["Ako to funguje", "#ako-to-funguje"],
   ["Galéria", "#galeria"],
   ["Kontakt", "#kontakt"],

@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Požičaj dodávku Poprad | Renault Master",
   description:
-    "Prenájom dodávok Renault Master v Poprade. Jednoduchá rezervácia, rýchle vybavenie a osobné prevzatie na Svitskej ceste 2.",
+    "Prenájom nových dodávok Renault Master L3H2 a L4H3 v Poprade od 45 € za deň. Poistenie, diaľničná známka SR a nonstop asistencia v cene.",
   metadataBase: new URL("https://pozicajdodavku.sk"),
   openGraph: {
     title: "Požičaj si dodávku v Poprade",
-    description: "Spoľahlivé dodávky Renault Master. Zavolajte a rezervujte si termín.",
+    description: "Nové dodávky Renault Master L3H2 a L4H3 v Poprade od 45 € za deň.",
     images: ["/images/hero.JPG"],
     locale: "sk_SK",
     type: "website",

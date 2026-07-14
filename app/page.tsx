@@ -42,7 +42,7 @@ export default function Home() {
               Požičaj si <span className="text-orange-500">dodávku.</span><br />Rýchlo a jednoducho.
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-white/70">
-              Potrebujete sa presťahovať alebo previezť väčší náklad? Vyberte si spoľahlivý Renault Master a vyrazte bez zbytočných starostí.
+              Nové dodávky Renault Master L3H2 a L4H3 s klimatizáciou, cúvacou kamerou a ťažným zariadením. Pripravené na krátky aj dlhší prenájom.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a href="#rezervacia" className="group flex items-center justify-between gap-8 rounded-2xl bg-orange-500 px-6 py-4 font-bold transition hover:bg-orange-600">
@@ -53,7 +53,7 @@ export default function Home() {
               </a>
             </div>
             <div className="mt-10 grid max-w-xl grid-cols-2 gap-5 border-t border-white/15 pt-7 sm:grid-cols-3">
-              {[["3", "dodávky"], ["Poprad", "osobné prevzatie"], ["Flexi", "dĺžka prenájmu"]].map(([value, label]) => (
+              {[["od 45 €", "za deň"], ["200 €", "vratná záloha"], ["3", "nové dodávky"]].map(([value, label]) => (
                 <div key={label}><strong className="block text-2xl font-black">{value}</strong><span className="text-xs font-semibold uppercase tracking-wider text-white/45">{label}</span></div>
               ))}
             </div>
@@ -65,9 +65,9 @@ export default function Home() {
       <section className="relative z-10 -mt-8 px-4 sm:px-6 lg:-mt-12 lg:px-8">
         <div className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-white shadow-lift md:grid-cols-3">
           {[
-            [Clock3, "Rýchle vybavenie", "Zavolajte a dostupnosť overíme ihneď."],
-            [Truck, "3 dodávky", "Vyberte si veľkosť podľa svojho nákladu."],
-            [MapPin, "Jednoduché prevzatie", "Svitská cesta 2, Poprad."],
+            [Clock3, "Od 45 € / deň", "Výhodnejšia cena pri prenájme od 4 dní."],
+            [ShieldCheck, "Kompletne poistené", "PZP, havarijné poistenie a nonstop asistencia."],
+            [MapPin, "Parkovanie zdarma", "Vaše auto môže zostať na našom vyhradenom parkovisku."],
           ].map(([Icon, title, text], index) => {
             const ItemIcon = Icon as typeof Clock3;
             return <div key={title as string} className={`flex gap-4 p-7 lg:p-8 ${index < 2 ? "border-b border-slate-100 md:border-b-0 md:border-r" : ""}`}><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-orange-50 text-orange-500"><ItemIcon className="h-6 w-6" /></span><div><h2 className="font-extrabold text-ink">{title as string}</h2><p className="mt-1 text-sm leading-6 text-slate-500">{text as string}</p></div></div>;
@@ -80,21 +80,63 @@ export default function Home() {
           <div className="max-w-2xl">
             <p className="eyebrow">Náš vozový park</p>
             <h2 className="section-title">Dodávka pre každý <span>veľký plán.</span></h2>
-            <p className="section-copy">Tri Renaulty Master sú pripravené na sťahovanie, prevoz materiálu, nábytku aj firemný rozvoz.</p>
+            <p className="section-copy">Tri nové Renaulty Master vo veľkostiach L3H2 a L4H3 sú pripravené na sťahovanie, prevoz materiálu, nábytku aj firemný rozvoz.</p>
           </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
             {[
-              ["Praktická", "Na rýchle prevozy po meste", "/images/gallery-2.JPG"],
-              ["Priestranná", "Keď potrebujete viac miesta", "/images/vans-front.JPG"],
-              ["Extra veľká", "Pre poriadny náklad", "/images/fleet.JPG"],
-            ].map(([name, text, src], i) => (
+              ["Renault Master L3H2", "Priestranná dodávka na sťahovanie a väčší náklad.", "/images/vans-front.JPG"],
+              ["Renault Master L4H3", "Extra dlhá a vysoká dodávka pre poriadny náklad.", "/images/fleet.JPG"],
+            ].map(([name, text, src]) => (
               <article key={name} className="group overflow-hidden rounded-3xl bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lift">
-                <div className="relative aspect-[4/3] overflow-hidden"><Image src={src} alt={`${name} dodávka Renault Master`} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /><span className="absolute left-5 top-5 rounded-full bg-ink/90 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white">Dodávka 0{i + 1}</span></div>
-                <div className="p-7"><h3 className="text-2xl font-black text-ink">{name}</h3><p className="mt-2 text-sm text-slate-500">{text}</p><ul className="mt-6 space-y-3 border-t border-slate-100 pt-6 text-sm font-semibold text-slate-700"><li className="flex gap-2"><Check className="h-5 w-5 text-orange-500" /> Renault Master</li><li className="flex gap-2"><Check className="h-5 w-5 text-orange-500" /> Krátkodobý aj dlhodobý prenájom</li></ul><a href="#rezervacia" className="mt-7 flex items-center justify-between rounded-xl bg-ink px-5 py-3.5 text-sm font-bold text-white transition hover:bg-orange-500">Overiť dostupnosť <ChevronRight className="h-4 w-4" /></a></div>
+                <div className="relative aspect-[16/10] overflow-hidden"><Image src={src} alt={`Dodávka ${name}`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover transition duration-500 group-hover:scale-105" /><span className="absolute left-5 top-5 rounded-full bg-ink/90 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white">Nové vozidlo</span></div>
+                <div className="p-7"><h3 className="text-2xl font-black text-ink">{name}</h3><p className="mt-2 text-sm text-slate-500">{text}</p><ul className="mt-6 grid gap-3 border-t border-slate-100 pt-6 text-sm font-semibold text-slate-700 sm:grid-cols-2"><li className="flex gap-2"><Check className="h-5 w-5 shrink-0 text-orange-500" /> Klimatizácia</li><li className="flex gap-2"><Check className="h-5 w-5 shrink-0 text-orange-500" /> Cúvacia kamera</li><li className="flex gap-2"><Check className="h-5 w-5 shrink-0 text-orange-500" /> Ťažné zariadenie</li><li className="flex gap-2"><Check className="h-5 w-5 shrink-0 text-orange-500" /> Diaľničná známka SR</li></ul><a href="#rezervacia" className="mt-7 flex items-center justify-between rounded-xl bg-ink px-5 py-3.5 text-sm font-bold text-white transition hover:bg-orange-500">Overiť dostupnosť <ChevronRight className="h-4 w-4" /></a></div>
               </article>
             ))}
           </div>
-          <p className="mt-6 text-center text-sm text-slate-500">Presný typ, rozmery a cenu vám radi potvrdíme podľa aktuálne dostupnej dodávky.</p>
+          <p className="mt-6 text-center text-sm text-slate-500">K dispozícii sú spolu 3 vozidlá. Konkrétny model vám potvrdíme podľa aktuálnej dostupnosti.</p>
+        </div>
+      </section>
+
+      <section id="cennik" className="section-pad bg-white">
+        <div className="container-wide">
+          <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="eyebrow">Jasné podmienky</p>
+              <h2 className="section-title">Jednoduchý <span>cenník.</span></h2>
+              <p className="section-copy">Cena platí za jeden deň prenájmu. Pri prenájme na viac dní jazdíte výhodnejšie.</p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <article className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">1 – 3 dni</p>
+                <p className="mt-4 text-5xl font-black tracking-tight text-ink">50 €</p>
+                <p className="mt-1 text-sm text-slate-500">za deň · limit 300 km</p>
+              </article>
+              <article className="relative overflow-hidden rounded-3xl bg-orange-500 p-7 text-white shadow-lift">
+                <span className="absolute right-5 top-5 rounded-full bg-white/20 px-3 py-1 text-[10px] font-black uppercase tracking-wider">Výhodnejšie</span>
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-white/70">4 – 15 dní</p>
+                <p className="mt-4 text-5xl font-black tracking-tight">45 €</p>
+                <p className="mt-1 text-sm text-white/70">za deň</p>
+              </article>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-slate-200 p-6"><p className="text-sm text-slate-500">Vratná záloha</p><strong className="mt-2 block text-2xl font-black text-ink">200 €</strong></div>
+            <div className="rounded-2xl border border-slate-200 p-6"><p className="text-sm text-slate-500">Nadlimitné kilometre</p><strong className="mt-2 block text-2xl font-black text-ink">0,12 € / km</strong></div>
+            <div className="rounded-2xl border border-slate-200 p-6"><p className="text-sm text-slate-500">Vaše vozidlo</p><strong className="mt-2 block text-2xl font-black text-ink">Parkovanie zdarma</strong></div>
+          </div>
+
+          <div className="mt-8 rounded-3xl bg-ink p-7 text-white sm:p-9">
+            <h3 className="text-xl font-black">V cene prenájmu máte</h3>
+            <ul className="mt-6 grid gap-4 text-sm text-white/70 sm:grid-cols-2 lg:grid-cols-4">
+              {["Platnú diaľničnú známku SR", "Zákonné a havarijné poistenie", "Nonstop asistenčné služby", "Vyhradené parkovanie počas nájmu"].map((item) => <li key={item} className="flex gap-3"><Check className="h-5 w-5 shrink-0 text-orange-500" /> {item}</li>)}
+            </ul>
+          </div>
+
+          <div className="mt-6 flex items-start gap-3 rounded-2xl bg-orange-50 p-5 text-sm leading-6 text-slate-600">
+            <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-orange-500" />
+            <p>Dodávku odovzdávame čistú a s plnou nádržou. V rovnakom stave – čistú a s plnou nádržou – ju zákazník aj vracia.</p>
+          </div>
         </div>
       </section>
 
