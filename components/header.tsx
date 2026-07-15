@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
-import { Menu, Phone, Truck, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 
 const links = [
   ["Dodávky", "#dodavky"],
@@ -18,9 +19,11 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/95 text-white backdrop-blur-lg">
       <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-2.5" aria-label="Požičaj dodávku – domov">
-          <span className="grid h-11 w-11 place-items-center rounded-xl bg-orange-500"><Truck className="h-6 w-6" /></span>
+          <span className="relative h-11 w-14 shrink-0 overflow-hidden rounded-xl bg-orange-500">
+            <Image src="/images/logo-source.JPG" alt="Logo Požičaj si ma" fill sizes="56px" className="object-cover object-[50%_75%]" />
+          </span>
           <span className="leading-none">
-            <strong className="block text-[17px] tracking-tight">POŽIČAJ DODÁVKU</strong>
+            <strong className="block text-[17px] tracking-tight">POŽIČAJ SI MA</strong>
             <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.22em] text-orange-500">Poprad</span>
           </span>
         </a>

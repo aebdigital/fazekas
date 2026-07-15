@@ -11,13 +11,13 @@ import {
   Phone,
   ShieldCheck,
   Sparkles,
-  Truck,
 } from "lucide-react";
 import { BookingForm } from "@/components/booking-form";
+import { CookieAwareMap, CookieConsent, CookieSettingsButton } from "@/components/cookie-consent";
 import { Header } from "@/components/header";
 
 const gallery = [
-  { src: "/images/vans-wide.JPG", alt: "Tri dodávky na prenájom pred Merkury Market v Poprade", wide: true },
+  { src: "/images/vans-wide.JPG", alt: "Dodávky na prenájom pred Merkury Market v Poprade", wide: true },
   { src: "/images/vans-front.JPG", alt: "Dodávky Renault Master pripravené na prenájom" },
   { src: "/images/gallery-1.JPG", alt: "Vozový park Požičaj dodávku Poprad" },
   { src: "/images/gallery-2.JPG", alt: "Biela dodávka Renault Master na prevádzke" },
@@ -41,8 +41,10 @@ export default function Home() {
             <h1 className="text-balance text-[52px] font-black leading-[0.94] tracking-[-0.045em] sm:text-7xl lg:text-[84px]">
               Požičaj si <span className="text-orange-500">dodávku.</span><br />Rýchlo a jednoducho.
             </h1>
-            <p className="mt-7 max-w-xl text-lg leading-8 text-white/70">
-              Nové dodávky Renault Master L3H2 a L4H3 s klimatizáciou, cúvacou kamerou a ťažným zariadením. Pripravené na krátky aj dlhší prenájom.
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/70">
+              <span className="block">Potrebujete sa presťahovať alebo previezť väčší náklad?</span>
+              <span className="block">Nové dodávky Renault Master L3H2 a L4H3 sú pripravené vyraziť.</span>
+              <span className="block">Klimatizácia, cúvacia kamera a ťažné zariadenie sú samozrejmosťou.</span>
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a href="#rezervacia" className="group flex items-center justify-between gap-8 rounded-2xl bg-orange-500 px-6 py-4 font-bold transition hover:bg-orange-600">
@@ -53,7 +55,7 @@ export default function Home() {
               </a>
             </div>
             <div className="mt-10 grid max-w-xl grid-cols-2 gap-5 border-t border-white/15 pt-7 sm:grid-cols-3">
-              {[["od 45 €", "za deň"], ["200 €", "vratná záloha"], ["3", "nové dodávky"]].map(([value, label]) => (
+              {[["od 30 €", "na 3 hodiny"], ["200 €", "vratná záloha"], ["L3H2 / L4H3", "dostupné modely"]].map(([value, label]) => (
                 <div key={label}><strong className="block text-2xl font-black">{value}</strong><span className="text-xs font-semibold uppercase tracking-wider text-white/45">{label}</span></div>
               ))}
             </div>
@@ -65,7 +67,7 @@ export default function Home() {
       <section className="relative z-10 -mt-8 px-4 sm:px-6 lg:-mt-12 lg:px-8">
         <div className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-white shadow-lift md:grid-cols-3">
           {[
-            [Clock3, "Od 45 € / deň", "Výhodnejšia cena pri prenájme od 4 dní."],
+            [Clock3, "Od 30 €", "Trojhodinový prenájom s limitom 150 km."],
             [ShieldCheck, "Kompletne poistené", "PZP, havarijné poistenie a nonstop asistencia."],
             [MapPin, "Parkovanie zdarma", "Vaše auto môže zostať na našom vyhradenom parkovisku."],
           ].map(([Icon, title, text], index) => {
@@ -80,7 +82,10 @@ export default function Home() {
           <div className="max-w-2xl">
             <p className="eyebrow">Náš vozový park</p>
             <h2 className="section-title">Dodávka pre každý <span>veľký plán.</span></h2>
-            <p className="section-copy">Tri nové Renaulty Master vo veľkostiach L3H2 a L4H3 sú pripravené na sťahovanie, prevoz materiálu, nábytku aj firemný rozvoz.</p>
+            <p className="section-copy">
+              <span className="block">Nové Renaulty Master sú dostupné vo veľkostiach L3H2 a L4H3.</span>
+              <span className="block">Sú pripravené na sťahovanie, prevoz materiálu, nábytku aj firemný rozvoz.</span>
+            </p>
           </div>
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             {[
@@ -93,7 +98,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <p className="mt-6 text-center text-sm text-slate-500">K dispozícii sú spolu 3 vozidlá. Konkrétny model vám potvrdíme podľa aktuálnej dostupnosti.</p>
+          <p className="mt-6 text-center text-sm text-slate-500">Konkrétny model vám potvrdíme podľa aktuálnej dostupnosti.</p>
         </div>
       </section>
 
@@ -103,19 +108,27 @@ export default function Home() {
             <div>
               <p className="eyebrow">Jasné podmienky</p>
               <h2 className="section-title">Jednoduchý <span>cenník.</span></h2>
-              <p className="section-copy">Cena platí za jeden deň prenájmu. Pri prenájme na viac dní jazdíte výhodnejšie.</p>
+              <p className="section-copy">
+                <span className="block">Vyberte si krátky prenájom alebo celodennú sadzbu.</span>
+                <span className="block">Cena pri prenájme nad 7 dní sa určuje individuálne.</span>
+              </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <article className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">1 – 3 dni</p>
-                <p className="mt-4 text-5xl font-black tracking-tight text-ink">50 €</p>
-                <p className="mt-1 text-sm text-slate-500">za deň · limit 300 km</p>
-              </article>
+            <div className="grid gap-4 sm:grid-cols-3">
               <article className="relative overflow-hidden rounded-3xl bg-orange-500 p-7 text-white shadow-lift">
-                <span className="absolute right-5 top-5 rounded-full bg-white/20 px-3 py-1 text-[10px] font-black uppercase tracking-wider">Výhodnejšie</span>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-white/70">4 – 15 dní</p>
-                <p className="mt-4 text-5xl font-black tracking-tight">45 €</p>
-                <p className="mt-1 text-sm text-white/70">za deň</p>
+                <span className="absolute right-5 top-5 rounded-full bg-white/20 px-3 py-1 text-[10px] font-black uppercase tracking-wider">Krátky prenájom</span>
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-white/70">3 hodiny</p>
+                <p className="mt-4 text-5xl font-black tracking-tight">30 €</p>
+                <p className="mt-1 text-sm text-white/70">limit 150 km</p>
+              </article>
+              <article className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">1 – 7 dní</p>
+                <p className="mt-4 text-5xl font-black tracking-tight text-ink">50 €</p>
+                <p className="mt-1 text-sm text-slate-500">za deň · limit 300 km/deň</p>
+              </article>
+              <article className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Nad 7 dní</p>
+                <p className="mt-4 text-4xl font-black tracking-tight text-ink">Dohodou</p>
+                <p className="mt-2 text-sm text-slate-500">Individuálna cenová ponuka</p>
               </article>
             </div>
           </div>
@@ -135,7 +148,16 @@ export default function Home() {
 
           <div className="mt-6 flex items-start gap-3 rounded-2xl bg-orange-50 p-5 text-sm leading-6 text-slate-600">
             <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-orange-500" />
-            <p>Dodávku odovzdávame čistú a s plnou nádržou. V rovnakom stave – čistú a s plnou nádržou – ju zákazník aj vracia.</p>
+            <p><span className="block">Dodávku odovzdávame čistú a s plnou nádržou.</span><span className="block">V rovnakom stave – čistú a s plnou nádržou – ju zákazník aj vracia.</span></p>
+          </div>
+
+          <div className="mt-4 rounded-3xl border border-slate-200 p-6 sm:p-8">
+            <p className="eyebrow">Čo potrebujete k prenájmu</p>
+            <h3 className="mt-3 text-2xl font-black text-ink">Dva doklady totožnosti</h3>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <span className="flex items-center gap-3 rounded-2xl bg-slate-50 px-5 py-4 text-sm font-bold text-slate-700"><Check className="h-5 w-5 text-orange-500" /> Občiansky preukaz</span>
+              <span className="flex items-center gap-3 rounded-2xl bg-slate-50 px-5 py-4 text-sm font-bold text-slate-700"><Check className="h-5 w-5 text-orange-500" /> Vodičský preukaz</span>
+            </div>
           </div>
         </div>
       </section>
@@ -151,7 +173,7 @@ export default function Home() {
           <ol className="space-y-3">
             {[
               [MessageCircle, "Ozvite sa", "Zavolajte alebo vyplňte krátky formulár."],
-              [CalendarCheck, "Vyberieme termín", "Spoločne overíme dostupnosť a dohodneme detaily."],
+              [CalendarCheck, "Pripravte si doklady", "Budete potrebovať občiansky a vodičský preukaz."],
               [ShieldCheck, "Prevezmite dodávku", "Stretneme sa na Svitskej ceste 2 v Poprade."],
             ].map(([Icon, title, text], i) => {
               const StepIcon = Icon as typeof MessageCircle;
@@ -175,7 +197,7 @@ export default function Home() {
           <div className="relative min-h-[420px] bg-ink p-8 text-white sm:p-12 lg:min-h-full">
             <Image src="/images/location.JPG" alt="Dodávky na prevádzke v Poprade" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover opacity-35" />
             <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink/80 to-orange-500/50" />
-            <div className="relative flex h-full flex-col justify-between"><div><p className="eyebrow">Rezervácia</p><h2 className="mt-4 text-4xl font-black leading-tight tracking-tight sm:text-5xl">Kedy potrebujete dodávku?</h2><p className="mt-5 max-w-md leading-7 text-white/60">Napíšte nám termín a kontakt. Správa sa odošle cez WhatsApp a dostupnosť vám potvrdíme osobne.</p></div><div className="mt-12 space-y-4"><a href="tel:+421911431222" className="flex items-center gap-3 font-bold"><span className="grid h-10 w-10 place-items-center rounded-xl bg-orange-500"><Phone className="h-5 w-5" /></span> 0911 431 222</a><p className="flex items-center gap-3 text-sm text-white/70"><span className="grid h-10 w-10 place-items-center rounded-xl bg-white/10"><MapPin className="h-5 w-5 text-orange-500" /></span> Svitská cesta 2, Poprad</p></div></div>
+            <div className="relative flex h-full flex-col justify-between"><div><p className="eyebrow">Rezervácia</p><h2 className="mt-4 text-4xl font-black leading-tight tracking-tight sm:text-5xl">Kedy potrebujete dodávku?</h2><p className="mt-5 max-w-md leading-7 text-white/60">Napíšte nám termín a kontakt. Dopyt odošleme e-mailom a dostupnosť vám potvrdíme osobne.</p></div><div className="mt-12 space-y-4"><a href="tel:+421911431222" className="flex items-center gap-3 font-bold"><span className="grid h-10 w-10 place-items-center rounded-xl bg-orange-500"><Phone className="h-5 w-5" /></span> 0911 431 222</a><p className="flex items-center gap-3 text-sm text-white/70"><span className="grid h-10 w-10 place-items-center rounded-xl bg-white/10"><MapPin className="h-5 w-5 text-orange-500" /></span> Svitská cesta 2, Poprad</p></div></div>
           </div>
           <div className="p-7 sm:p-12"><h3 className="text-2xl font-black text-ink">Nezáväzný dopyt</h3><p className="mb-8 mt-2 text-sm text-slate-500">Zaberie vám to menej než minútu.</p><BookingForm /></div>
         </div>
@@ -184,14 +206,15 @@ export default function Home() {
       <section id="kontakt" className="bg-white py-20">
         <div className="container-wide grid gap-8 lg:grid-cols-[.65fr_1.35fr] lg:items-stretch">
           <div className="rounded-3xl bg-ink p-8 text-white sm:p-10"><p className="eyebrow">Kde nás nájdete</p><h2 className="mt-4 text-4xl font-black tracking-tight">Poprad<br /><span className="text-orange-500">Merkury Market</span></h2><p className="mt-6 text-white/55">Svitská cesta 2<br />058 01 Poprad</p><div className="mt-8 space-y-3"><a href="tel:+421911431222" className="flex items-center gap-3 rounded-2xl bg-white/10 p-4 font-bold transition hover:bg-white/15"><Phone className="h-5 w-5 text-orange-500" /> 0911 431 222</a><a href="https://www.google.com/maps/search/?api=1&query=Merkury+Market+Svitsk%C3%A1+cesta+2+Poprad" target="_blank" rel="noreferrer" className="flex items-center justify-between rounded-2xl bg-orange-500 p-4 font-bold transition hover:bg-orange-600">Otvoriť navigáciu <ArrowRight className="h-5 w-5" /></a></div></div>
-          <div className="min-h-[420px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-100"><iframe title="Mapa – Merkury Market Poprad" src="https://www.google.com/maps?q=Merkury%20Market%2C%20Svitsk%C3%A1%20cesta%202%2C%20Poprad&output=embed" className="h-full min-h-[420px] w-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div>
+          <div className="min-h-[420px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-100"><CookieAwareMap /></div>
         </div>
       </section>
 
       <footer className="border-t border-white/10 bg-ink pb-28 pt-12 text-white md:pb-12">
-        <div className="container-wide flex flex-col justify-between gap-8 md:flex-row md:items-center"><a href="#top" className="flex items-center gap-3"><span className="grid h-11 w-11 place-items-center rounded-xl bg-orange-500"><Truck /></span><span><strong className="block">POŽIČAJ DODÁVKU</strong><small className="text-white/40">Poprad</small></span></a><p className="text-sm text-white/40">© {new Date().getFullYear()} pozicajdodavku.sk</p><a href="tel:+421911431222" className="font-bold text-orange-500">0911 431 222</a></div>
+        <div className="container-wide flex flex-col justify-between gap-8 md:flex-row md:items-center"><a href="#top" className="flex items-center gap-3"><span className="relative h-11 w-14 overflow-hidden rounded-xl bg-orange-500"><Image src="/images/logo-source.JPG" alt="Logo Požičaj si ma" fill sizes="56px" className="object-cover object-[50%_75%]" /></span><span><strong className="block">POŽIČAJ SI MA</strong><small className="text-white/40">Poprad</small></span></a><div className="flex flex-col gap-2 text-sm text-white/40 md:items-center"><p>© {new Date().getFullYear()} pozicajdodavku.sk</p><CookieSettingsButton className="underline decoration-white/20 underline-offset-4 transition hover:text-white" /></div><a href="tel:+421911431222" className="font-bold text-orange-500">0911 431 222</a></div>
       </footer>
 
+      <CookieConsent />
       <div className="fixed inset-x-3 bottom-3 z-40 flex overflow-hidden rounded-2xl shadow-2xl md:hidden"><a href="tel:+421911431222" className="flex flex-1 items-center justify-center gap-2 bg-ink px-4 py-4 text-sm font-bold text-white"><Phone className="h-5 w-5 text-orange-500" /> Zavolať</a><a href="#rezervacia" className="flex flex-1 items-center justify-center gap-2 bg-orange-500 px-4 py-4 text-sm font-bold text-white">Rezervovať <ArrowRight className="h-4 w-4" /></a></div>
     </main>
   );
