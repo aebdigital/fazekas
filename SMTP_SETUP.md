@@ -14,9 +14,9 @@ In Netlify, open **Project configuration → Environment variables** and add:
 
 | Variable | Purpose | Example |
 | --- | --- | --- |
-| `CONTACT_FORM_RECIPIENT` | Address that receives reservation requests | `rezervacie@example.com` |
+| `CONTACT_FORM_RECIPIENT` | Address that receives reservation requests | `info@pozicajdodavku.sk` |
 | `SMTP2GO_API_KEY` | SMTP2GO API key | `api-xxxxxxxx...` |
-| `SMTP2GO_SENDER` | Verified sender used in the From header | `Požičaj si ma <noreply@example.com>` |
+| `SMTP2GO_SENDER` | Verified sender used in the From header | `Požičaj si ma <info@pozicajdodavku.sk>` |
 
 `CONTACT_FORM_RECIPIENT` may contain multiple addresses separated by commas or semicolons.
 

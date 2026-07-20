@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import { AlertCircle, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 
 type FormStatus = {
@@ -79,10 +80,18 @@ export function BookingForm() {
         <span>{status.type === "loading" ? "Odosielam…" : "Odoslať nezáväzný dopyt"}</span>
         {status.type === "loading" ? <Loader2 className="h-5 w-5 animate-spin" /> : <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />}
       </button>
-      <div role="status" aria-live="polite" className={`flex min-h-5 items-start gap-2 text-xs leading-5 ${status.type === "error" ? "text-red-600" : status.type === "success" ? "text-emerald-700" : "text-slate-500"}`}>
-        {status.type === "error" ? <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" /> : <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />}
-        <p>{status.message || "Dopyt odošleme e-mailom a dostupnosť vám potvrdíme telefonicky."}</p>
-      </div>
+      {status.message && (
+        <div role="status" aria-live="polite" className={`flex min-h-5 items-start gap-2 text-xs leading-5 ${status.type === "error" ? "text-red-600" : status.type === "success" ? "text-emerald-700" : "text-slate-500"}`}>
+          {status.type === "error" ? <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" /> : <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />}
+          <p>{status.message}</p>
+        </div>
+      )}
+      <p className="text-xs leading-5 text-slate-400">
+        Odoslaním formulára beriete na vedomie naše{" "}
+        <Link href="/ochrana-osobnych-udajov" className="font-semibold text-slate-600 underline underline-offset-4 transition hover:text-orange-600">
+          zásady ochrany osobných údajov
+        </Link>.
+      </p>
     </form>
   );
 }
