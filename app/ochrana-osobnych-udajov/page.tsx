@@ -169,6 +169,7 @@ export default function PrivacyPolicyPage() {
           <div className="text-white/40">
             <p>© {new Date().getFullYear()} pozicajdodavku.sk</p>
             <p className="mt-1">Sídlo: Globway Trans EU s. r. o., Jovická 1861/36, 048 01 Rožňava</p>
+            <p className="mt-1">IČO: 57423172 · DIČ: 2122711668 · IČ DPH: SK2122711668</p>
           </div>
           <div className="flex flex-wrap gap-5 text-white/60">
             <Link href="/" className="transition hover:text-white">Domov</Link>

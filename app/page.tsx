@@ -121,12 +121,12 @@ export default function Home() {
               <div className="grid gap-4 sm:grid-cols-3">
                 <article className="relative overflow-hidden rounded-3xl bg-orange-500 p-7 text-white shadow-lift">
                   <p className="text-xs font-black uppercase tracking-[0.18em] text-white/70">3 hodiny</p>
-                  <p className="mt-4 text-5xl font-black tracking-tight">35 €</p>
+                  <p className="mt-4 text-5xl font-black tracking-tight">35 €*</p>
                   <p className="mt-1 text-sm text-white/70">limit 100 km</p>
                 </article>
                 <article className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
                   <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">1 – 7 dní</p>
-                  <p className="mt-4 text-5xl font-black tracking-tight text-ink">50 €</p>
+                  <p className="mt-4 text-5xl font-black tracking-tight text-ink">50 €*</p>
                   <p className="mt-1 text-sm text-slate-500">za deň · limit 300 km/deň</p>
                 </article>
                 <article className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
@@ -135,7 +135,7 @@ export default function Home() {
                   <p className="mt-2 text-sm text-slate-500">Individuálna cenová ponuka</p>
                 </article>
               </div>
-              <p className="mt-3 text-right text-xs font-medium text-slate-400">Cena je bez DPH.</p>
+              <p className="mt-3 text-right text-xs font-medium text-slate-400">* Cena je bez DPH.</p>
             </div>
           </div>
 
@@ -218,7 +218,7 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-white/10 bg-ink pb-28 pt-12 text-white md:pb-12">
-        <div className="container-wide flex flex-col justify-between gap-8 md:flex-row md:items-center"><a href="#top" className="flex items-center gap-3"><span className="relative h-11 w-14 overflow-hidden rounded-xl bg-orange-500"><Image src="/images/logo-source.JPG" alt="Logo Požičaj si ma" fill sizes="56px" className="object-cover object-[50%_75%]" /></span><span><strong className="block">POŽIČAJ SI MA</strong><small className="text-white/40">Poprad</small></span></a><div className="flex flex-col gap-2 text-sm text-white/40 md:items-center"><p>© {new Date().getFullYear()} pozicajdodavku.sk</p><p className="max-w-md md:text-center">Sídlo: Globway Trans EU s. r. o., Jovická 1861/36, 048 01 Rožňava</p><div className="flex flex-wrap gap-4 md:justify-center"><Link href="/ochrana-osobnych-udajov" className="underline decoration-white/20 underline-offset-4 transition hover:text-white">Ochrana osobných údajov</Link><CookieSettingsButton className="underline decoration-white/20 underline-offset-4 transition hover:text-white" /></div></div><div className="flex flex-col gap-2 font-bold md:items-end"><a href="tel:+421911431222" className="text-orange-500">0911 431 222</a><a href="mailto:info@pozicajdodavku.sk" className="text-sm text-white/60 transition hover:text-white">info@pozicajdodavku.sk</a></div></div>
+        <div className="container-wide flex flex-col justify-between gap-8 md:flex-row md:items-center"><a href="#top" className="flex items-center gap-3"><span className="relative h-11 w-14 overflow-hidden rounded-xl bg-orange-500"><Image src="/images/logo-source.JPG" alt="Logo Požičaj si ma" fill sizes="56px" className="object-cover object-[50%_75%]" /></span><span><strong className="block">POŽIČAJ SI MA</strong><small className="text-white/40">Poprad</small></span></a><div className="flex flex-col gap-2 text-sm text-white/40 md:items-center"><p>© {new Date().getFullYear()} pozicajdodavku.sk</p><p className="max-w-md md:text-center">Sídlo: Globway Trans EU s. r. o., Jovická 1861/36, 048 01 Rožňava</p><p className="max-w-md md:text-center">IČO: 57423172 · DIČ: 2122711668 · IČ DPH: SK2122711668</p><div className="flex flex-wrap gap-4 md:justify-center"><Link href="/ochrana-osobnych-udajov" className="underline decoration-white/20 underline-offset-4 transition hover:text-white">Ochrana osobných údajov</Link><CookieSettingsButton className="underline decoration-white/20 underline-offset-4 transition hover:text-white" /></div></div><div className="flex flex-col gap-2 font-bold md:items-end"><a href="tel:+421911431222" className="text-orange-500">0911 431 222</a><a href="mailto:info@pozicajdodavku.sk" className="text-sm text-white/60 transition hover:text-white">info@pozicajdodavku.sk</a></div></div>
       </footer>
 
       <CookieConsent />
