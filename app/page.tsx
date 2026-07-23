@@ -61,8 +61,12 @@ export default function Home() {
               </a>
             </div>
             <div className="mt-10 grid max-w-xl grid-cols-2 gap-5 border-t border-white/15 pt-7 sm:grid-cols-3">
-              {[["od 35 €", "na 3 hodiny"], ["200 €", "vratná záloha"], ["L3H2 / L4H3", "dostupné modely"]].map(([value, label]) => (
-                <div key={label}><strong className="block text-2xl font-black">{value}</strong><span className="text-xs font-semibold uppercase tracking-wider text-white/45">{label}</span></div>
+              {[
+                { value: "od 35 €", label: "na 3 hodiny" },
+                { value: "200 €", label: "vratná záloha", hideOnMobile: true },
+                { value: "L3H2 / L4H3", label: "dostupné modely" },
+              ].map(({ value, label, hideOnMobile }) => (
+                <div key={label} className={hideOnMobile ? "hidden sm:block" : ""}><strong className="block text-2xl font-black">{value}</strong><span className="text-xs font-semibold uppercase tracking-wider text-white/45">{label}</span></div>
               ))}
             </div>
           </div>
@@ -114,28 +118,27 @@ export default function Home() {
               <h2 className="section-title !mt-0">Jednoduchý <span>cenník</span></h2>
               <p className="section-copy">
                 <span className="block">Vyberte si krátky prenájom alebo celodennú sadzbu.</span>
-                <span className="block">Cena pri prenájme nad 7 dní sa určuje individuálne.</span>
+                <span className="block">Cena pri prenájme nad 5 dní sa určuje individuálne.</span>
               </p>
             </div>
             <div>
               <div className="grid gap-4 sm:grid-cols-3">
                 <article className="relative overflow-hidden rounded-3xl bg-orange-500 p-7 text-white shadow-lift">
                   <p className="text-xs font-black uppercase tracking-[0.18em] text-white/70">3 hodiny</p>
-                  <p className="mt-4 text-5xl font-black tracking-tight">35 €*</p>
+                  <p className="mt-4 text-5xl font-black tracking-tight">35 €</p>
                   <p className="mt-1 text-sm text-white/70">limit 100 km</p>
                 </article>
                 <article className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
-                  <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">1 – 7 dní</p>
-                  <p className="mt-4 text-5xl font-black tracking-tight text-ink">50 €*</p>
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">1 – 4 dni</p>
+                  <p className="mt-4 text-5xl font-black tracking-tight text-ink">50 €</p>
                   <p className="mt-1 text-sm text-slate-500">za deň · limit 300 km/deň</p>
                 </article>
                 <article className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
-                  <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Nad 7 dní</p>
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Nad 5 dní</p>
                   <p className="mt-4 text-4xl font-black tracking-tight text-ink">Dohodou</p>
                   <p className="mt-2 text-sm text-slate-500">Individuálna cenová ponuka</p>
                 </article>
               </div>
-              <p className="mt-3 text-right text-xs font-medium text-slate-400">* Cena je bez DPH.</p>
             </div>
           </div>
 

@@ -57,7 +57,7 @@ const structuredData = [
         },
         {
           "@type": "Offer",
-          name: "Prenájom dodávky na 1 až 7 dní",
+          name: "Prenájom dodávky na 1 až 4 dni",
           price: 50,
           priceCurrency: "EUR",
           priceSpecification: {
