@@ -218,7 +218,7 @@ export default function Home() {
                 Boli ste s prenájmom spokojní? Vaša recenzia pomôže ďalším zákazníkom vybrať si správnu dodávku.
               </p>
               <a
-                href="https://share.google/IWDUQVtrMdAicZWCK"
+                href="https://g.page/r/CSxBb1yv2zeCEAE/review"
                 target="_blank"
                 rel="noreferrer"
                 className="group mt-8 inline-flex items-center gap-4 rounded-2xl bg-ink px-6 py-4 font-bold text-white transition hover:bg-orange-500"
@@ -229,7 +229,7 @@ export default function Home() {
               </a>
             </div>
             <a
-              href="https://share.google/IWDUQVtrMdAicZWCK"
+              href="https://g.page/r/CSxBb1yv2zeCEAE/review"
               target="_blank"
               rel="noreferrer"
               className="group flex flex-col items-center justify-center bg-ink p-8 text-center text-white sm:p-12"
