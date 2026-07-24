@@ -13,6 +13,7 @@ import {
   Phone,
   ShieldCheck,
   Sparkles,
+  Star,
 } from "lucide-react";
 import { BookingForm } from "@/components/booking-form";
 import { CookieAwareMap, CookieConsent, CookieSettingsButton } from "@/components/cookie-consent";
@@ -194,6 +195,62 @@ export default function Home() {
         <div className="container-wide">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end" data-reveal><div><h2 className="section-title !mt-0">Pripravené <span>vyraziť</span></h2></div><p className="max-w-md text-sm leading-6 text-slate-500">Naše dodávky nájdete priamo pri Merkury Market v Poprade. Pozrite si vozový park.</p></div>
           <GalleryLightbox images={gallery} />
+        </div>
+      </section>
+
+      <section id="recenzie" className="section-pad bg-[#f6f7f9]">
+        <div className="container-wide">
+          <div className="grid overflow-hidden rounded-[36px] bg-white shadow-lift lg:grid-cols-[1.2fr_.8fr]">
+            <div className="p-8 sm:p-12 lg:p-16" data-reveal>
+              <div className="flex items-center gap-4">
+                <span className="grid h-14 w-14 place-items-center rounded-2xl border border-slate-200 bg-white shadow-sm">
+                  <Image src="/images/google-logo.svg" alt="Google" width={34} height={34} />
+                </span>
+                <div>
+                  <p className="text-sm font-black text-ink">Google recenzie</p>
+                  <div className="mt-1 flex gap-0.5 text-amber-400" aria-label="Päť hviezdičiek">
+                    {Array.from({ length: 5 }).map((_, index) => <Star key={index} className="h-4 w-4 fill-current" />)}
+                  </div>
+                </div>
+              </div>
+              <h2 className="section-title !mt-8">Podeľte sa o svoju <span>skúsenosť</span></h2>
+              <p className="mt-5 max-w-xl text-base leading-7 text-slate-500 sm:text-lg sm:leading-8">
+                Boli ste s prenájmom spokojní? Vaša recenzia pomôže ďalším zákazníkom vybrať si správnu dodávku.
+              </p>
+              <a
+                href="https://share.google/IWDUQVtrMdAicZWCK"
+                target="_blank"
+                rel="noreferrer"
+                className="group mt-8 inline-flex items-center gap-4 rounded-2xl bg-ink px-6 py-4 font-bold text-white transition hover:bg-orange-500"
+              >
+                <Image src="/images/google-logo.svg" alt="" width={26} height={26} />
+                Dajte nám recenziu na Google
+                <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
+              </a>
+            </div>
+            <a
+              href="https://share.google/IWDUQVtrMdAicZWCK"
+              target="_blank"
+              rel="noreferrer"
+              className="group flex flex-col items-center justify-center bg-ink p-8 text-center text-white sm:p-12"
+              data-reveal
+              data-reveal-delay="100"
+              aria-label="Otvoriť Google recenzie"
+            >
+              <span className="rounded-[28px] bg-white p-5 shadow-2xl transition duration-300 group-hover:-translate-y-1 group-hover:scale-[1.02]">
+                <Image
+                  src="/images/google-review-qr.svg"
+                  alt="QR kód pre Google recenzie"
+                  width={260}
+                  height={260}
+                  unoptimized
+                  className="h-auto w-[220px] sm:w-[260px]"
+                />
+              </span>
+              <strong className="mt-6 text-xl font-black">Naskenujte QR kód</strong>
+              <span className="mt-2 max-w-xs text-sm leading-6 text-white/55">Otvorí sa formulár na pridanie recenzie na Google.</span>
+            </a>
+          </div>
         </div>
       </section>
 
